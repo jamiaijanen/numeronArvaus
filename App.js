@@ -7,17 +7,17 @@ export default function App() {
   const [number, setNumber] = useState(Math.floor(Math.random() * 100) + 1)
   const [guess, setGuess] = useState()
   const [message, setMessage] = useState('Guess a number between 1-100')
+  let [numberOfGuesses, setNumberOfGuesses] = useState(0)
 
   const checking = () => {
-    let numberOfGuesses = 0;
     if (guess == number) {
-      numberOfGuesses = parseInt(numberOfGuesses) + 1
+      setNumberOfGuesses(numberOfGuesses = numberOfGuesses + 1)
       Alert.alert('You guessed the number in ' + numberOfGuesses + ' guesses')
     } else if (guess < number) {
-      numberOfGuesses = parseInt(numberOfGuesses) + 1
+      setNumberOfGuesses(numberOfGuesses = numberOfGuesses + 1)
       setMessage('You guess ' + guess + ' is too low')
     } else if (guess > number) {
-      numberOfGuesses = parseInt(numberOfGuesses) + 1
+      setNumberOfGuesses(numberOfGuesses = numberOfGuesses + 1)
       setMessage('You guess ' + guess + ' is too high')
     }
   }
