@@ -13,6 +13,10 @@ export default function App() {
     if (guess == number) {
       setNumberOfGuesses(numberOfGuesses = numberOfGuesses + 1)
       Alert.alert('You guessed the number in ' + numberOfGuesses + ' guesses')
+      setNumberOfGuesses(0)
+      setNumber(Math.floor(Math.random() * 100) + 1)
+      setMessage('Guess a number between 1-100')
+      setGuess()
     } else if (guess < number) {
       setNumberOfGuesses(numberOfGuesses = numberOfGuesses + 1)
       setMessage('You guess ' + guess + ' is too low')
